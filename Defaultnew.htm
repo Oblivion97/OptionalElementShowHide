@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('MyApp', [])
+        app.controller('MyController', function ($scope) {
+            //This will hide the DIV by default.
+            $scope.IsVisible = true;
+            $scope.ShowPassport = function (value) {
+                //If DIV is visible it will be hidden and vice versa.
+                $scope.IsVisible = value == "Y";
+            }
+        });
+    </script>
+    <div ng-app="MyApp" ng-controller="MyController">
+        <label for="chkPassport">
+            Do you have Passport?
+            Yes <input type="radio" name="Passport" ng-click="ShowPassport('Y')" />
+            No <input type="radio" name="Passport" ng-click="ShowPassport('N')" />
+        </label>
+        <hr />
+        <div ng-show="IsVisible">
+            Passport Number:
+            <input type="text" id="txtPassportNumber" />
+        </div>
+        <div ng-show="IsVisible">
+            Passport Number:
+            <input type="text" id="txtPassportNumber" />
+        </div>
+        <div ng-show="IsVisible">
+            Passport Number:
+            <input type="text" id="txtPassportNumber" />
+        </div>
+
+        <div ng-hide="InVisible">
+            Passport Number:
+            <input type="text" id="txtPassportNumber" />
+        </div>
+        <div ng-hide="InVisible">
+            Passport Number:
+            <input type="text" id="txtPassportNumber" />
+        </div>
+        <div ng-hide="InVisible">
+            Passport Number:
+            <input type="text" id="txtPassportNumber" />
+        </div>
+    </div>
+</body>
+
+</html>
